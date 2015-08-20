@@ -1,5 +1,5 @@
 (**
-	v. 2.1
+	v. 2.2
 
 This version does a little two-step in order to work on systems that do not have Path Finder installed
 without popping up a dialog asking where it is. The idea here is to compile it with the needed terms
@@ -18,6 +18,7 @@ name the app "open folder in sublime" if you want it to always load the finder w
 name it anything else if you want it to open the finder selection
 
 Copyright © 2013 pjv <pjv@pjv.me>
+Copyright © 2015 crmaxx <crmaxx@gmail.com>
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar http://www.wtfpl.net/. 
@@ -80,21 +81,21 @@ using terms from application "Path Finder"
 				end tell
 			end if
 			
-			st2(finderSelection)
+			st3(finderSelection)
 		end run
 		
 		-- script was drag-and-dropped onto
 		on open (theList)
-			st2(theList)
+			st3(theList)
 		end open
 		
 		-- open in Sublime
-		on st2(listOfAliases)
-			tell application "Sublime Text 2"
+		on st3(listOfAliases)
+			tell application "Sublime Text"
 				open listOfAliases
 				activate
 			end tell
-		end st2
+		end st3
 		
 	end script
 	
